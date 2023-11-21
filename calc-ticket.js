@@ -60,5 +60,8 @@ document.getElementById("delete").addEventListener("click",
         nome.value = "";
         distanza.value = "";
         eta.value = "";
+        nome.style.borderColor = "#ced4da";
+        eta.style.borderColor = "#ced4da";
+        distanza.style.borderColor = "#ced4da";
     }
 )
