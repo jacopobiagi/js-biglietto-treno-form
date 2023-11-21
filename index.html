@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BOOTSTRAP LINK -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- link css-->
+    <link rel="stylesheet" href="style.css">
+    <title>form per il biglietto del treno</title>
+</head>
+<body>
+    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    <div class="form shadow">
+        <div class="d-flex row w-100 h-50">
+            <div class="h-100 col-4 d-flex flex-column justify-content-around">
+                <span>Inserisci nome</span>
+                <input type="text" class="form-control" id="nomePasseggero">
+            </div>
+            <div class="h-100 col-4 d-flex flex-column justify-content-around">
+                <span>inserisci distanza (in km)</span>
+                <input type="text" class="form-control" id="distanza">
+            </div>
+            <div class="h-100 col-4 d-flex flex-column justify-content-around">
+                <span>inserisci età</span>
+                <select class="form-select" aria-label="Default select example" id="etaPasseggero">
+                    <option value="0">Inserisci la tua fascia</option>
+                    <option value="1">minorenne</option>
+                    <option value="2">maggiorenne</option>
+                    <option value="3">over 65</option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex w-100 h-50 justify-content-center align-items-center submit">
+            <button class="btn btn-primary" type="button" id="submit">Genera</button>
+            <button class="btn btn-primary" type="button" id="delete">Annulla</button>
+        </div>
+    </div>
+
+    <div class="biglietto d-none" id="biglietto">
+        <h2>IL TUO BIGLIETTO</h2>
+        <div class="form ticket">
+            <div class="h-100 w-100 ticket-content">
+                <h3>DETTAGLIO PASSEGGERI</h3>
+                <div class="body-ticket w-100 h-75 d-flex">
+                    <div class="nome-passeggero d-flex flex-column justify-content-around align-items-center">
+                        <h4>NOME PASSEGGERO</h4>
+                        <h6>Giorgio</h6>
+                    </div>
+                    <div class="prezzo d-flex justify-content-between border-right-0">
+                        <div class="d-flex flex-column h-100 justify-content-between">
+                            <span>Offerta</span>
+                            <span>Biglietto standard</span>
+                        </div>
+                        <div class="d-flex flex-column h-100 justify-content-between">
+                            <span>Carrozza</span>
+                            <span>9</span>
+                        </div>
+                        <div class="d-flex flex-column h-100 justify-content-between">
+                            <span>Codice CP</span>
+                            <span>65404</span>
+                        </div>
+                        <div class="d-flex flex-column h-100 justify-content-between">
+                            <span>Costo biglietto</span>
+                            <span id="costoComplessivo"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calc-ticket.js"></script>
+</body>
+</html>
