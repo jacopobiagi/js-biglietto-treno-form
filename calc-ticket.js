@@ -3,16 +3,19 @@ let distanza = document.getElementById("distanza");
 let eta = document.getElementById("etaPasseggero");
 let biglietto = document.getElementById("biglietto");
 let costo = document.getElementById("costoComplessivo");
-let distanzaNumerica = parseFloat(distanza.value);
+let passeggero = document.getElementById("mioNome");
 
 
 document.getElementById("submit").addEventListener("click",
     function(){
-        console.log(nome.value)
 
         //Controllo se i campi sono stati tutti riempiti
         if(nome.value && distanza.value && eta.value!=="0"){
 
+            let distanzaNumerica = parseInt(distanza.value);//conversione del valore
+
+            nome.style.borderColor = "#ced4da";
+            eta.style.borderColor = "#ced4da";
             //controllo se il campo della distanza è stato inserito correttamente
             if(!isNaN(distanzaNumerica)){
 
@@ -32,8 +35,10 @@ document.getElementById("submit").addEventListener("click",
                 else{
                     prezzoNetto = prezzoLordo;
                 }
-                console.log(distanza.value)
+                
+                distanza.style.borderColor = "#ced4da";
                 costo.innerHTML =  prezzoNetto.toFixed(2);
+                passeggero.innerHTML = nome.value;
 
             }else{
                 distanza.style.borderColor = "red";
@@ -45,5 +50,15 @@ document.getElementById("submit").addEventListener("click",
             eta.style.borderColor = "red";
         }
         
+    }
+);
+
+document.getElementById("delete").addEventListener("click",
+
+    function(){
+        biglietto.classList.add("d-none");
+        nome.value = "";
+        distanza.value = "";
+        eta.value = "";
     }
 )

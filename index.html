@@ -12,6 +12,8 @@
     <title>form per il biglietto del treno</title>
 </head>
 <body>
+
+    <!-- BLOCCO DEL FORM -->
     <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
     <div class="form shadow">
         <div class="d-flex row w-100 h-50">
@@ -39,6 +41,7 @@
         </div>
     </div>
 
+    <!-- BLOCCO DEL BIGLIETTO -->
     <div class="biglietto d-none" id="biglietto">
         <h2>IL TUO BIGLIETTO</h2>
         <div class="form ticket">
@@ -47,7 +50,7 @@
                 <div class="body-ticket w-100 h-75 d-flex">
                     <div class="nome-passeggero d-flex flex-column justify-content-around align-items-center">
                         <h4>NOME PASSEGGERO</h4>
-                        <h6>Giorgio</h6>
+                        <h6 id="mioNome"></h6>
                     </div>
                     <div class="prezzo d-flex justify-content-between border-right-0">
                         <div class="d-flex flex-column h-100 justify-content-between">
